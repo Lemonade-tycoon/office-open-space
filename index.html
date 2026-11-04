@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Good Vibes Office</title>
+  <meta name="description" content="Interactive 3D open-space office with a Gen Z cafe theme for 20 people, built with three.js." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/three.module.min.js",
+        "three/addons/": "./vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="hud">
+    <h1>Good Vibes Office</h1>
+    <p class="sub">Open space · 20 seats · Pantry · Chill zone</p>
+    <div class="modes">
+      <button id="btn-orbit" class="active">Orbit</button>
+      <button id="btn-walk">Walk</button>
+      <button id="btn-top">Top view</button>
+    </div>
+    <div class="modes">
+      <button data-goto="work">Work zone</button>
+      <button data-goto="pantry">Pantry</button>
+      <button data-goto="chill">Chill zone</button>
+      <button data-goto="meeting">Meeting</button>
+    </div>
+    <label class="toggle"><input type="checkbox" id="chk-night" /> Night mode (neon)</label>
+    <p id="help">Drag to rotate · Scroll to zoom · Right-drag to pan</p>
+  </div>
+
+  <div id="legend">
+    <span><i style="background:#f4a261"></i>Work</span>
+    <span><i style="background:#e76f51"></i>Pantry</span>
+    <span><i style="background:#9b8ce6"></i>Chill</span>
+    <span><i style="background:#2a9d8f"></i>Meeting</span>
+  </div>
+
+  <div id="crosshair" hidden></div>
+  <div id="loading">Loading office…</div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
